@@ -63,13 +63,13 @@
           }
           // Revision de las URLs de SOPORTE 
           if (property_exists($response, 'urlSoporte')) {
-			$urlSoporte = array();
-            if (!is_null($response->urlSoporte)){
+			      $urlSoporte = array();
+            if ( !empty($response->urlSoporte) ){
               $urlSoportes = $response->urlSoporte;
-			  $i=0;
+			        $i=0;
               foreach($urlSoportes as $url){
-				$urlSoporte[$i] = $base_image_url . $url;
-				$i++;
+				        $urlSoporte[$i] = $base_image_url . $url;
+				        $i++;
               }
             }
           }
