@@ -23,6 +23,7 @@
 
   include "Seguimiento.php";
   include "CaptchaCheck.php";
+  include "Parameters.php";
 
   if (isset($_POST["numSeguimiento"])){
     if ($_POST["numSeguimiento"] == ""){
@@ -33,12 +34,11 @@
       generarAlerta ("Fallo de autenticación captcha");
     }else{
       //consultar dato en base de datos
-      $base_url = 'http://10.10.10.6:8080/ToxementIntranetRestServices/TMS';
-	    //$base_url = 'http://127.0.0.1:38080/ToxementIntranetRestServices/TMS';
-      $base_image_url ='https://app.rcontrol.com.mx/Pictures/';
-	  
-      $service_name = '/consultarEmbarque';
-      $shipment_value = $_POST["numSeguimiento"];
+      $parameters = getParametros();
+      $base_url = $parameters['base_url']; //'http://10.10.10.6:8080/ToxementIntranetRestServices/TMS';
+	    $base_image_url = $parameters['base_image_url']; //'https://app.rcontrol.com.mx/Pictures/';
+      $service_name = $parameters['service_name']; //'/consultarEmbarque';
+      $shipment_value = $_POST[$parameters['shipment_value']]; //$_POST['numSeguimiento'];
       
       // Construct the complete URL with the shipment parameter
       $request_url = $base_url . $service_name . '?shipment=' . urlencode($shipment_value);
