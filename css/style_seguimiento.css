@@ -341,7 +341,9 @@
 .img-modal{
   max-height: 85vh;
 }
-
+.icono-modal{
+  height: 300px;
+}
 /* Botones adelante y atras */
 .slideAnt, .slideSig {
   cursor: pointer;

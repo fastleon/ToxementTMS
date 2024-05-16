@@ -36,7 +36,7 @@
       //consultar dato en base de datos
       $parameters = getParametros();
       $base_url = $parameters['base_url']; //'http://10.10.10.6:8080/ToxementIntranetRestServices/TMS';
-	    $base_image_url = $parameters['base_image_url']; //'https://app.rcontrol.com.mx/Pictures/';
+      $base_image_url = $parameters['base_image_url']; //'https://sgl.controlt.com.co/Pictures/';
       $service_name = $parameters['service_name']; //'/consultarEmbarque';
       $shipment_value = $_POST[$parameters['shipment_value']]; //$_POST['numSeguimiento'];
       
@@ -73,8 +73,9 @@
               }
             }
           }
+          header('test:');
           if (property_exists($response, 'tracks')){
-            if (!empty($response->tracks)){
+            //if (!empty($response->tracks)){
               $eventos = $response->tracks;
               $numSeguimiento = $shipment_value;
               foreach($eventos as $evento){
@@ -91,7 +92,7 @@
                   $fechaProcesoLogistico = $evento->fechaFormato;
                 }
               }
-            }
+            //}
           }
         }else{
           //echo "NO SE ENCONTRARON DATOS DE ESE NUMERO DE SEGUIMIENTO";
