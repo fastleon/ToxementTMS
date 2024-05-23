@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reCAPTCHA Test</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
+
+        document.getElementById('submit').addEventListener('click', function(event) {
+            event.preventDefault();
+            grecaptcha.execute();
+        });
+    </script>
+</head>
+<body>
+    <form id="demo-form" action="_form.php" method="post">
+        <button id="submit" class="g-recaptcha"
+            data-sitekey="captcha_secret_key"
+            data-callback="onSubmit"
+            data-size="invisible">Submit</button>
+        </div-->
+    </form>
+</body>
+</html>
