@@ -1,7 +1,7 @@
 img/
-#_form.php
-#Seguimiento.php
-#form.html
+_form.php
+Seguimiento.php
+form.html
 Parameters.php
-#index.html
-#CaptchaCheck.php
+index.html
+CaptchaCheck.php
