@@ -35,10 +35,10 @@
     }else{
       //consultar dato en base de datos
       $parameters = getParametros();
-      $base_url = $parameters['base_url']; //'http://10.10.10.6:8080/ToxementIntranetRestServices/TMS';
-      $base_image_url = $parameters['base_image_url']; //'https://sgl.controlt.com.co/Pictures/';
-      $service_name = $parameters['service_name']; //'/consultarEmbarque';
-      $shipment_value = $_POST[$parameters['shipment_value']]; //$_POST['numSeguimiento'];
+      $base_url = $parameters['base_url'];
+      $base_image_url = $parameters['base_image_url'];
+      $service_name = $parameters['service_name'];
+      $shipment_value = $_POST[$parameters['shipment_value']];
       
       // Construct the complete URL with the shipment parameter
       $request_url = $base_url . $service_name . '?shipment=' . urlencode($shipment_value);
